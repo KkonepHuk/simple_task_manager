@@ -43,6 +43,7 @@ class Task_manager:
         people_idents = input(colored('Введите id сотрудников: ', color='light_cyan')).strip().split(' ')
         while not(self.check_idents(people_idents)):
             people_idents = input(colored('Введите id сотрудников: ', color='light_cyan')).strip().split(' ')
+        people_idents = [ident.zfill(3) for ident in people_idents]
         deadline = input(colored('Введите срок выполнения задачи в днях: ', color='light_cyan')).strip()
         while not deadline.isnumeric():
             print(colored('Срок выполнения указывается в днях\n', color='light_red'))
