@@ -16,6 +16,10 @@ class Task:
         s += f'Идентификаторы сотрудников: {' '.join(['#' + str(person_ident) for person_ident in self.people_idents])}\n'
         s += f'Срок выполнения (в днях): {self.deadline}'
         return s
+    
+    def to_dict(self):
+        return {'ident' : self.ident, 'name': self.name, 'description' : self.description, 'people_idents' : self.people_idents, 'deadline' : self.deadline}
+    
 
 def create_task(ident, name, description, people_idents, deadline):
     return Task(ident, name, description, people_idents, deadline)
